@@ -1,0 +1,51 @@
+.section {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.status {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--primary);
+}
+
+.content {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 1.5rem;
+  }
+}

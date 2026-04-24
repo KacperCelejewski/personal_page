@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "blog": "BLOG",
+    "contact": "CONTACT",
+    "resume": "RESUME.PDF"
+  },
+  "hero": {
+    "status": "STATUS: DEPLOYING EXCELLENCE",
+    "title": "Kacper Celejewski",
+    "subtitle": "Java Developer leveraging AI to build faster and smarter. I specialize in the Java/Spring ecosystem, working with GCP and Kafka. My edge is AI-Augmented Engineering – I use Claude and agentic automations to streamline development.",
+    "cta_init": "INITIALIZE_PROJECT",
+    "cta_source": "VIEW_SOURCE"
+  },
+  "tech_stack": {
+    "title": "Core Tech Stack",
+    "integrity": "SYSTEM INTEGRITY: 99.9%"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "view_all": "VIEW_ALL_PROJECTS >>"
+  },
+  "contact": {
+    "title": "INITIALIZE_CONNECTION",
+    "status": "Waiting for input from user_remote",
+    "channels": "SYSTEM_CHANNELS",
+    "send": "SEND_PACKET >>"
+  }
+}
