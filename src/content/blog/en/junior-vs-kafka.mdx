@@ -1,0 +1,38 @@
+---
+title: "Junior vs Kafka: How I Survived My First Encounter (and what I learned)"
+date: "2024-04-25"
+category: "Experiences"
+excerpt: "My first steps into the world of distributed systems. Does Kafka really bite? A look at messy configs, errors, and how AI helped me make sense of it all."
+image: "/blog/kafka-junior.jpg"
+---
+
+Hey everyone! 👋
+
+If you've ever felt overwhelmed by terms like “zookeeper,” “partitions,” or “consumer groups,” then this post is for you. Today, we're skipping the academic definitions for an honest talk about how I – a junior – tried to tame Kafka and why everything kept exploding at first.
+
+## 1. "Wait, what is this even for?"
+
+When I first heard about Kafka, I thought it was just a... fast database? Or maybe just another queue? Not even close. Kafka is a beast that requires a total shift in mindset. It’s not "I’m requesting data," it’s "I’m listening to what’s happening."
+
+**My first mistake?** I tried to use Kafka like a synchronous API. Spoiler: that’s not how it works. If your system is waiting for a response from Kafka to move forward, you’re probably doing it wrong (just like I did at the start!).
+
+## 2. The "Aha!" Moments (What actually helped)
+
+The hardest thing for me to wrap my head around was that data in Kafka doesn’t disappear once it’s read (unlike RabbitMQ). It stays there! You can read it again, from the beginning, from last week... This changes everything when it comes to debugging.
+
+**Junior Protip:** If something isn't working, don't just keep restarting everything. Check the `offsets`. They usually hold the key to why your consumer "can't see anything."
+
+## 3. AI as my "Shadow Senior"
+
+Working alone or in a small setup means you don’t always have someone to ask. This is where Claude stepped in. Instead of spending 3 hours on Stack Overflow searching for "why isn't my spring-kafka connecting," I’d feed it the logs and ask: "Explain this to me like I'm a junior."
+
+Claude helped me not only fix errors but also write my first integration tests with `EmbeddedKafka`. It was a huge lesson in automation and how AI can genuinely accelerate learning difficult technologies.
+
+## 4. Wrapping Up
+
+Kafka is tough, but it’s incredibly rewarding once you finally see data packets flying between services exactly as planned. Don't be afraid of the errors – they’re your best teachers.
+
+What about you? What was your worst encounter with a new technology? Let me know on LinkedIn! 🚀
+
+---
+*Kacper Celejewski - Junior Java Developer & AI Enthusiast*

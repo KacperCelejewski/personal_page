@@ -1,0 +1,38 @@
+---
+title: "Junior vs Kafka: Jak przetrwałem pierwsze starcie (i czego się nauczyłem)"
+date: "2024-04-25"
+category: "Doświadczenia"
+excerpt: "Moje pierwsze kroki w świecie systemów rozproszonych. Czy Kafka naprawdę gryzie? Spojrzenie na messy konfigurację, błędy i to, jak AI pomogło mi to wszystko ogarnąć."
+image: "/blog/kafka-junior.jpg"
+---
+
+Cześć wszystkim! 👋 
+
+Jeśli kiedykolwiek czuliście się przytłoczeni terminami typu „zookeeper”, „partitions” czy „consumer groups”, to ten wpis jest dla Was. Dzisiaj nie będzie akademickich definicji, tylko szczera rozmowa o tym, jak ja – junior – próbowałem okiełznać Kafkę i dlaczego na początku wszystko mi wybuchało.
+
+## 1. "O co w tym w ogóle chodzi?"
+
+Kiedy pierwszy raz usłyszałem o Kafce, myślałem, że to po prostu taka... szybka baza danych? Kolejka jak każda inna? Nic bardziej mylnego. Kafka to bestia, która wymaga zmiany myślenia. Nie „proszę o dane”, tylko „słucham co się dzieje”.
+
+**Mój pierwszy błąd?** Próbowałem używać Kafki jak synchronicznego API. Spoiler: to tak nie działa. Jeśli Twój system czeka na odpowiedź z Kafki, żeby ruszyć dalej, to prawdopodobnie robisz to źle (tak jak ja na początku!).
+
+## 2. Momenty "Aha!" (czyli co pomogło)
+
+Najtrudniejszą rzeczą było zrozumienie, że dane w Kafce nie znikają po odczytaniu (jak w RabbitMQ). One tam są! Możesz je przeczytać jeszcze raz, od początku, od tygodnia... To zmienia wszystko w kwestii debugowania.
+
+**Protip dla juniorów:** Jeśli coś nie działa, nie restartuj wszystkiego w kółko. Sprawdź `offsets`. To one zazwyczaj trzymają klucz do zagadki, dlaczego Twój konsument „nic nie widzi”.
+
+## 3. AI jako mój "Senior" w zespole
+
+Pracując samemu lub w małym setupie, nie zawsze masz kogo zapytać. Tutaj do gry wszedł Claude. Zamiast spędzać 3 godziny na Stack Overflow szukając „dlaczego mój spring-kafka się nie łączy”, wrzucałem mu logi i pytałem: „Wyjaśnij mi to jak juniorowi”.
+
+Claude pomógł mi nie tylko naprawić błędy, ale też napisać pierwsze testy integracyjne z `EmbeddedKafka`. To była mega lekcja automatyzacji i tego, jak AI może realnie przyspieszyć naukę trudnych technologii.
+
+## 4. Podsumowanie
+
+Kafka jest trudna, ale daje niesamowitą frajdę, kiedy w końcu zobaczysz, że pakiety danych latają między serwisami tak, jak zaplanowałeś. Nie bójcie się błędów – one są najlepszym nauczycielem.
+
+A Wy? Jakie było Wasze najgorsze spotkanie z nową technologią? Dajcie znać na LinkedIn! 🚀
+
+---
+*Kacper Celejewski - Junior Java Developer & AI Enthusiast*
