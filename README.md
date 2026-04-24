@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kacper Celejewski // Java Developer & AI-Augmented Engineer
 
-## Getting Started
+A high-performance, visually striking personal portfolio and blog built with **Next.js**, featuring a minimalist cyberpunk aesthetic and sophisticated terminal-inspired UI.
 
-First, run the development server:
+## 🚀 Key Features
 
+- **Cyberpunk Design System**: Custom glassmorphism, glowing accents, and terminal-inspired components.
+- **Multilingual Support (i18n)**: Full support for English (EN), Polish (PL), and German (DE).
+- **MDX Blog Engine**: High-performance blog with Markdown support, categories, and deep linking.
+- **AI-Augmented Engineering**: Showcasing projects and experience in Java, Spring Boot, Kafka, and GCP, optimized for modern AI workflows.
+- **Testing Infrastructure**: Comprehensive unit and integration testing suite using Jest and React Testing Library.
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Vanilla CSS Modules (Cyberpunk tokens)
+- **Testing**: Jest + React Testing Library
+- **Content**: MDX + Gray-matter
+- **Internationalization**: Custom i18n middleware
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS)
+- npm or pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KacperCelejewski/portfolio_page.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🧪 Testing
+
+Run the automated test suite:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Watch mode for development:
+```bash
+npm run test:watch
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/[locale]`: Multilingual routing and page components.
+- `src/components`: Reusable UI elements (TerminalSection, Header, etc.).
+- `src/content`: MDX blog posts structured by locale.
+- `src/__tests__`: Automated unit and integration tests.
+- `src/dictionaries`: i18n translation files.
+- `src/lib`: Context providers and utility functions.
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
+This project is personal intellectual property. Feel free to explore the code for inspiration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
