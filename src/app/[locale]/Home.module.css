@@ -103,6 +103,14 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--secondary);
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .systemIntegrity {
+    font-size: 0.65rem;
+    margin-top: 0.25rem;
+  }
 }
 
 .techGrid {
