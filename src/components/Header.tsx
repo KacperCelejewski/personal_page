@@ -61,6 +61,23 @@ export default function Header({ dict, locale }: HeaderProps) {
               </li>
             ))}
           </ul>
+          
+          <div className={styles.mobileActions}>
+            <div className={styles.langPicker}>
+              <Link href="/en" className={locale === 'en' ? styles.activeLang : ''}>EN</Link>
+              <span>|</span>
+              <Link href="/pl" className={locale === 'pl' ? styles.activeLang : ''}>PL</Link>
+              <span>|</span>
+              <Link href="/de" className={locale === 'de' ? styles.activeLang : ''}>DE</Link>
+            </div>
+            <button 
+              className={styles.themeToggle} 
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? '🌙 LIGHT' : '☀️ DARK'}
+            </button>
+          </div>
         </nav>
 
         <div className={styles.actions}>

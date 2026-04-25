@@ -175,21 +175,47 @@
     display: block;
   }
 
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    width: 100%;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .mobileActions .langPicker {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+
+  .mobileActions .themeToggle {
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
   .nav {
     position: fixed;
     top: 0;
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(25px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999;
-    border-left: 1px solid var(--primary);
   }
 
   .navOpen {
@@ -199,14 +225,19 @@
   .navList {
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .navLink {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 800;
   }
 
   .actions {
-    display: none; /* Hide actions in mobile for now or move to nav */
+    display: none;
   }
+}
+
+.mobileActions {
+  display: none;
 }

@@ -13,7 +13,7 @@
 }
 
 .title {
-  font-size: 4.5rem;
+  font-size: var(--font-size-hero);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -80,7 +80,7 @@
 }
 
 .sectionHeader h2 {
-  font-size: 2rem;
+  font-size: var(--font-size-section);
   text-transform: uppercase;
 }
 
@@ -152,7 +152,7 @@
   }
 
   .title {
-    font-size: 3.5rem;
+    /* No manual font size needed, using fluid var */
   }
 }
 
@@ -302,6 +302,6 @@
   }
   
   .title {
-    font-size: 3rem;
+    /* No manual font size needed, using fluid var */
   }
 }

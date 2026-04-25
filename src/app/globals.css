@@ -16,6 +16,8 @@
   --header-height: 80px;
   
   --scanline-opacity: 0.03;
+  --font-size-hero: clamp(2.5rem, 8vw + 1rem, 5rem);
+  --font-size-section: clamp(1.75rem, 4vw + 1rem, 2.5rem);
 }
 
 [data-theme='dark'] {
@@ -89,6 +91,12 @@ input, textarea, button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 1.25rem;
+  }
 }
 
 .terminal-status {
