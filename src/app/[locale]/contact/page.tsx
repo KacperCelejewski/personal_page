@@ -21,16 +21,16 @@ export default async function ContactPage({
         <div className={styles.formSection}>
           <form className={styles.form}>
             <div className={styles.field}>
-              <label>USER_IDENTIFIER</label>
-              <input type="text" placeholder="NAME or ALIAS" />
+              <label htmlFor="name">USER_IDENTIFIER</label>
+              <input id="name" type="text" placeholder="NAME or ALIAS" required />
             </div>
             <div className={styles.field}>
-              <label>COMMUNICATION_ENDPOINT</label>
-              <input type="email" placeholder="EMAIL_ADDRESS" />
+              <label htmlFor="email">COMMUNICATION_ENDPOINT</label>
+              <input id="email" type="email" placeholder="EMAIL_ADDRESS" required />
             </div>
             <div className={styles.field}>
-              <label>MESSAGE_PAYLOAD</label>
-              <textarea placeholder="ENTER SYSTEM QUERY..." rows={8}></textarea>
+              <label htmlFor="message">MESSAGE_PAYLOAD</label>
+              <textarea id="message" placeholder="ENTER SYSTEM QUERY..." rows={8} required></textarea>
             </div>
             <button type="submit" className={styles.submitBtn}>
               {dict.contact.send}
@@ -43,14 +43,14 @@ export default async function ContactPage({
             <h2 className="text-mono">{dict.contact.channels}</h2>
             <div className={styles.channels}>
               <div className={styles.channelCard}>
-                <div className={styles.channelIcon}></div>
+                <div className={styles.channelIcon} role="img" aria-label="GitHub"></div>
                 <div>
                   <span className={styles.channelLabel}>REPOSITORY</span>
                   <span className={styles.channelValue}>GITHUB</span>
                 </div>
               </div>
               <div className={styles.channelCard}>
-                <div className={styles.channelIcon}></div>
+                <div className={styles.channelIcon} role="img" aria-label="LinkedIn"></div>
                 <div>
                   <span className={styles.channelLabel}>PROFESSIONAL</span>
                   <span className={styles.channelValue}>LINKEDIN</span>
@@ -67,7 +67,7 @@ export default async function ContactPage({
             <p>Currently accepting new project inquiries. Response latency usually &lt; 24 hours.</p>
           </div>
 
-          <div className={styles.debugLog}>
+          <div className={styles.debugLog} aria-hidden="true">
             <div className={styles.logLine}>[info] Connection stable...</div>
             <div className={styles.logLine}>[auth] Key recognized: GUEST_01</div>
             <div className={styles.logLine}>[sys] Listening for incoming data</div>

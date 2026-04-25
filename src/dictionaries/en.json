@@ -31,8 +31,16 @@
   },
   "contact": {
     "title": "INITIALIZE_CONNECTION",
-    "status": "Waiting for input from user_remote",
-    "channels": "SYSTEM_CHANNELS",
-    "send": "SEND_PACKET >>"
+    "status": "Awaiting user_remote input",
+    "channels": "SYSTEM CHANNELS",
+    "send": "SEND PACKET >>"
+  },
+  "a11y": {
+    "toggle_light": "Switch to light mode",
+    "toggle_dark": "Switch to dark mode",
+    "toggle_theme": "Toggle theme",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "current_lang": "Current language: "
   }
 }

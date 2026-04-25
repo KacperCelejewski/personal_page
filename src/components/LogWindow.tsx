@@ -7,7 +7,7 @@ interface LogWindowProps {
 
 export default function LogWindow({ logs, path }: LogWindowProps) {
   return (
-    <div className={styles.window}>
+    <div className={styles.window} aria-hidden="true">
       <div className={styles.titleBar}>
         <div className={styles.dots}>
           <span className={styles.dot}></span>

@@ -11,13 +11,13 @@ export default function Footer() {
         </div>
         
         <div className={styles.links}>
-          <a href="https://github.com/KacperCelejewski" target="_blank" rel="noopener noreferrer">GITHUB</a>
-          <a href="https://www.linkedin.com/in/kacper-celejewski/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-          <a href="#">TWITTER</a>
-          <a href="#">EMAIL</a>
+          <a href="https://github.com/KacperCelejewski" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GITHUB</a>
+          <a href="https://www.linkedin.com/in/kacper-celejewski/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LINKEDIN</a>
+          <a href="#" aria-label="Twitter/X Profile">TWITTER</a>
+          <a href="mailto:email@example.com" aria-label="Send Email">EMAIL</a>
         </div>
       </div>
-      <div className={styles.ticker}>
+      <div className={styles.ticker} aria-hidden="true">
         <div className={styles.tickerContent}>
            CPU LOAD: 12% | MEM USAGE: 4.2GB | LATENCY: 14MS | UPTIME: 99.9% | ENCRYPTION: AES-256 | SYSTEM STATUS: OPTIMAL
         </div>

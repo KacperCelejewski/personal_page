@@ -10,7 +10,7 @@ interface TerminalSectionProps {
 export default function TerminalSection({ children, label, status, className }: TerminalSectionProps) {
   return (
     <section className={`${styles.section} ${className || ''}`}>
-      <div className={styles.header}>
+      <div className={styles.header} aria-hidden="true">
         {label && <span className={styles.label}>{label}</span>}
         <div className={styles.dots}>
           <span className={styles.dot}></span>

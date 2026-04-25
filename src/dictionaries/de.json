@@ -34,5 +34,13 @@
     "status": "Warten auf Eingabe von user_remote",
     "channels": "SYSTEMKANÄLE",
     "send": "PAKET_SENDEN >>"
+  },
+  "a11y": {
+    "toggle_light": "Zu hellem Modus wechseln",
+    "toggle_dark": "Zu dunklem Modus wechseln",
+    "toggle_theme": "Thema umschalten",
+    "open_menu": "Menü öffnen",
+    "close_menu": "Menü schließen",
+    "current_lang": "Aktuelle Sprache: "
   }
 }

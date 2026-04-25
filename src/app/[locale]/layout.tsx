@@ -37,9 +37,12 @@ export default async function LocalizedLayout({
         />
       </head>
       <body>
+        <a href="#main-content" className="skipLink">
+          {locale === 'pl' ? 'Przejdź do treści' : locale === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}
+        </a>
         <ThemeProvider>
           <Header dict={dict} locale={locale} />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

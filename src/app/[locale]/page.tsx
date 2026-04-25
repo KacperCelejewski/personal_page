@@ -30,11 +30,11 @@ export default async function Home({
           </h1>
           <p className={styles.subtitle}>{dict.hero.subtitle}</p>
           <div className={styles.ctaGroup}>
-            <Link href={`/${locale}/contact`}>
-              <button className={styles.primaryBtn}>{dict.hero.cta_init}</button>
+            <Link href={`/${locale}/contact`} className={styles.primaryBtn}>
+              {dict.hero.cta_init}
             </Link>
-            <a href="https://github.com/KacperCelejewski" target="_blank" rel="noopener noreferrer">
-              <button className={styles.secondaryBtn}>{dict.hero.cta_source}</button>
+            <a href="https://github.com/KacperCelejewski" target="_blank" rel="noopener noreferrer" className={styles.secondaryBtn}>
+              {dict.hero.cta_source}
             </a>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default async function Home({
             { name: 'Claude AI', icon: '🤖' }
           ].map((tech) => (
             <div key={tech.name} className={styles.techCard}>
-              <div className={styles.techIcon}>{tech.icon}</div>
+              <div className={styles.techIcon} role="img" aria-label={`${tech.name} icon`}>{tech.icon}</div>
               <span className={styles.techName}>{tech.name}</span>
             </div>
           ))}
@@ -68,7 +68,8 @@ export default async function Home({
         <div className={styles.sectionHeader}>
           <h2 className="text-mono">{dict.projects.title}</h2>
           <Link href={`/${locale}/projects`} className={styles.viewAll}>
-            {dict.projects.view_all}
+            {dict.projects.view_all.replace(' >>', '')}
+            <span aria-hidden="true"> &gt;&gt;</span>
           </Link>
         </div>
         <div className={styles.projectsGrid}>

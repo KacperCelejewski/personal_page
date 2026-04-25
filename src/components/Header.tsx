@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from '../lib/ThemeContext';
 import styles from './Header.module.css';
 
@@ -14,7 +14,24 @@ interface HeaderProps {
 export default function Header({ dict, locale }: HeaderProps) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    if (isMenuOpen) {
+      window.addEventListener('keydown', handleEscape);
+    }
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isMenuOpen]);
   
   const navItems = [
     { label: dict.nav.home, href: `/${locale}` },
@@ -41,18 +58,20 @@ export default function Header({ dict, locale }: HeaderProps) {
           <button 
             className={styles.themeToggle} 
             onClick={toggleTheme}
-            aria-label="Toggle theme"
+            aria-label={dict.a11y.toggle_theme}
           >
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
-          <div className={styles.langPickerMini}>
-            {['en', 'pl', 'de'].map((l) => (
-              <Link 
-                key={l}
-                href={`/${l}${pathname.substring(3) || ''}`} 
-                className={locale === l ? styles.activeLang : ''}
+          <div className={styles.langSwitcher}>
+            {['EN', 'PL', 'DE'].map((lang) => (
+              <Link
+                key={lang}
+                href={`/${lang.toLowerCase()}${pathname.substring(3)}`}
+                className={locale.toUpperCase() === lang ? styles.activeLang : ''}
+                aria-label={`${dict.a11y.current_lang} ${lang}`}
+                aria-current={locale.toUpperCase() === lang ? 'page' : undefined}
               >
-                {l.toUpperCase()}
+                {lang}
               </Link>
             ))}
           </div>
@@ -61,9 +80,10 @@ export default function Header({ dict, locale }: HeaderProps) {
         <button 
           className={styles.mobileToggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMenuOpen ? dict.a11y.close_menu : dict.a11y.open_menu}
+          aria-expanded={isMenuOpen}
         >
-          <div className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`}>
+          <div className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`} aria-hidden="true">
             <span></span><span></span><span></span>
           </div>
         </button>
@@ -85,37 +105,49 @@ export default function Header({ dict, locale }: HeaderProps) {
           
           <div className={styles.mobileActions}>
             <div className={styles.langPicker}>
-              <Link href="/en" className={locale === 'en' ? styles.activeLang : ''}>EN</Link>
-              <span>|</span>
-              <Link href="/pl" className={locale === 'pl' ? styles.activeLang : ''}>PL</Link>
-              <span>|</span>
-              <Link href="/de" className={locale === 'de' ? styles.activeLang : ''}>DE</Link>
+              {['en', 'pl', 'de'].map((l) => (
+                <Link
+                  key={l}
+                  href={`/${l}${pathname.substring(3) || ''}`}
+                  className={locale === l ? styles.activeLang : ''}
+                  aria-label={`${dict.a11y.current_lang} ${l.toUpperCase()}`}
+                  aria-current={locale === l ? 'page' : undefined}
+                >
+                  {l.toUpperCase()}
+                </Link>
+              ))}
             </div>
             <button 
               className={styles.themeToggle} 
               onClick={toggleTheme}
-              aria-label="Toggle theme"
+              aria-label={mounted ? (theme === 'light' ? dict.a11y.toggle_dark : dict.a11y.toggle_light) : 'Toggle theme'}
             >
-              {theme === 'light' ? '🌙 LIGHT' : '☀️ DARK'}
+              {mounted ? (theme === 'light' ? '🌙 LIGHT' : '☀️ DARK') : '🌙 LIGHT'}
             </button>
           </div>
         </nav>
 
         <div className={styles.actions}>
           <div className={styles.langPicker}>
-            <Link href="/en" className={locale === 'en' ? styles.activeLang : ''}>EN</Link>
-            <span>|</span>
-            <Link href="/pl" className={locale === 'pl' ? styles.activeLang : ''}>PL</Link>
-            <span>|</span>
-            <Link href="/de" className={locale === 'de' ? styles.activeLang : ''}>DE</Link>
+            {['en', 'pl', 'de'].map((l) => (
+              <Link
+                key={l}
+                href={`/${l}${pathname.substring(3) || ''}`}
+                className={locale === l ? styles.activeLang : ''}
+                aria-label={`${dict.a11y.current_lang} ${l.toUpperCase()}`}
+                aria-current={locale === l ? 'page' : undefined}
+              >
+                {l.toUpperCase()}
+              </Link>
+            ))}
           </div>
           
           <button 
             className={styles.themeToggle} 
             onClick={toggleTheme}
-            aria-label="Toggle theme"
+            aria-label={mounted ? (theme === 'light' ? dict.a11y.toggle_dark : dict.a11y.toggle_light) : 'Toggle theme'}
           >
-            {theme === 'light' ? '🌙' : '☀️'}
+            {mounted ? (theme === 'light' ? '🌙' : '☀️') : '🌙'}
           </button>
 
           <button className={styles.resumeBtn}>

@@ -13,23 +13,23 @@ export default async function ProjectsPage({
   return (
     <div className="main-container">
       <div className={styles.terminalWindow}>
-        <div className={styles.terminalHeader}>
+        <div className={styles.terminalHeader} aria-hidden="true">
           <div className={styles.dots}>
             <span></span><span></span><span></span>
           </div>
           <span className={styles.path}>kacper@celejewski:~/projects</span>
         </div>
         <div className={styles.terminalBody}>
-          <div className={styles.commandLine}>
+          <div className={styles.commandLine} aria-hidden="true">
             <span className={styles.prompt}>kacper@celejewski:~$</span> ls -la /projects/featured
           </div>
-          <div className={styles.lsOutput}>
+          <div className={styles.lsOutput} aria-hidden="true">
             {projects.map(p => (
               <span key={p.id}>drwxr-xr-x {p.slug.replace('-', '_')}</span>
             ))}
             <span>drwxr-xr-x data_glitch</span>
           </div>
-          <div className={styles.commandLine}>
+          <div className={styles.commandLine} aria-hidden="true">
             <span className={styles.prompt}>kacper@celejewski:~$</span> cat readme_v2.txt
           </div>
           <div className={styles.readmeText}>
@@ -61,7 +61,13 @@ export default async function ProjectsPage({
                 ))}
               </div>
               <div className={styles.links}>
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className={index !== 0 ? styles.viewLink : ''}>
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={index !== 0 ? styles.viewLink : ''}
+                  aria-label={`${locale === 'pl' ? 'Repozytorium GitHub dla' : locale === 'de' ? 'GitHub-Repository für' : 'GitHub repository for'} ${project.title}`}
+                >
                   GITHUB_REPO
                 </a>
               </div>

@@ -34,5 +34,13 @@
     "status": "Oczekiwanie na dane od użytkownika",
     "channels": "KANAŁY_SYSTEMOWE",
     "send": "WYŚLIJ_PAKIET >>"
+  },
+  "a11y": {
+    "toggle_light": "Tryb jasny",
+    "toggle_dark": "Tryb ciemny",
+    "toggle_theme": "Przełącz motyw",
+    "open_menu": "Otwórz menu",
+    "close_menu": "Zamknij menu",
+    "current_lang": "Aktualny język: "
   }
 }
