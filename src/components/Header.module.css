@@ -24,6 +24,12 @@
   letter-spacing: -0.05em;
 }
 
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.15rem;
+  }
+}
+
 .navList {
   display: flex;
   gap: 2rem;

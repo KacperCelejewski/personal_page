@@ -18,6 +18,8 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   text-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .subtitle {
@@ -29,21 +31,23 @@
 
 .ctaGroup {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .primaryBtn {
   background: var(--primary);
   color: #000;
   border: none;
-  padding: 0.85rem 2rem;
+  padding: 0.85rem 1.5rem;
   font-family: var(--font-mono);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 15px var(--primary-glow);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
+  min-width: fit-content;
 }
 
 .primaryBtn:hover {
@@ -55,11 +59,12 @@
   background: transparent;
   border: 1px solid var(--primary);
   color: var(--primary);
-  padding: 0.85rem 2rem;
+  padding: 0.85rem 1.5rem;
   font-family: var(--font-mono);
   cursor: pointer;
   transition: all 0.3s ease;
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+  min-width: fit-content;
 }
 
 .secondaryBtn:hover {
@@ -149,10 +154,6 @@
   
   .ctaGroup {
     justify-content: center;
-  }
-
-  .title {
-    /* No manual font size needed, using fluid var */
   }
 }
 
