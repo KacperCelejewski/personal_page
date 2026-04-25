@@ -82,6 +82,16 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 3rem;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .sectionHeader h2 {
@@ -302,7 +312,4 @@
     grid-template-columns: 1fr;
   }
   
-  .title {
-    /* No manual font size needed, using fluid var */
-  }
-}
+

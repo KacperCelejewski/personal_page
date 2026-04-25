@@ -37,6 +37,27 @@ export default function Header({ dict, locale }: HeaderProps) {
           KACPER<span className="text-primary">_CELEJEWSKI</span>
         </Link>
 
+        <div className={styles.mobileQuickActions}>
+          <button 
+            className={styles.themeToggle} 
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+          <div className={styles.langPickerMini}>
+            {['en', 'pl', 'de'].map((l) => (
+              <Link 
+                key={l}
+                href={`/${l}${pathname.substring(3) || ''}`} 
+                className={locale === l ? styles.activeLang : ''}
+              >
+                {l.toUpperCase()}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <button 
           className={styles.mobileToggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
