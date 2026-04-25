@@ -18,8 +18,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   text-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
-  overflow-wrap: break-word;
-  hyphens: auto;
+  white-space: nowrap;
 }
 
 .subtitle {
@@ -164,6 +163,11 @@
   
   .heroContent {
     align-items: center;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+    white-space: nowrap;
   }
   
   .subtitle {

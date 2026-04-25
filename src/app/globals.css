@@ -16,7 +16,7 @@
   --header-height: 80px;
   
   --scanline-opacity: 0.03;
-  --font-size-hero: clamp(2.5rem, 8vw + 1rem, 5rem);
+  --font-size-hero: clamp(1.85rem, 10vw + 0.2rem, 5rem);
   --font-size-section: clamp(1.75rem, 4vw + 1rem, 2.5rem);
 }
 
