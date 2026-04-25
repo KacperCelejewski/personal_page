@@ -33,7 +33,9 @@ export default async function ProjectsPage({
             <span className={styles.prompt}>kacper@celejewski:~$</span> cat readme_v2.txt
           </div>
           <div className={styles.readmeText}>
-            Selected deployments showcasing full-stack capabilities, high-performance architecture, and minimalist aesthetic engineering.
+            {locale === 'pl' ? 'Wybrane wdrożenia prezentujące możliwości full-stack, architekturę o wysokiej wydajności i minimalistyczną estetykę inżynieryjną.' : 
+             locale === 'de' ? 'Ausgewählte Implementierungen, die Full-Stack-Fähigkeiten, Hochleistungsarchitektur und minimalistische ästhetische Technik demonstrieren.' :
+             'Selected deployments showcasing full-stack capabilities, high-performance architecture, and minimalist aesthetic engineering.'}
           </div>
         </div>
       </div>
@@ -49,7 +51,9 @@ export default async function ProjectsPage({
             <div className={styles.projectContent}>
               <h2 className={styles.projectTitle}>{project.title}</h2>
               <p className={styles.projectDesc}>
-                {index === 0 ? project.longDesc : project.desc}
+                {index === 0 
+                  ? (dict.projects[project.slug.replace('-', '_') as keyof typeof dict.projects]?.longDesc || project.longDesc)
+                  : (dict.projects[project.slug.replace('-', '_') as keyof typeof dict.projects]?.desc || project.desc)}
               </p>
               <div className={styles.tags}>
                 {project.links.map(tag => (

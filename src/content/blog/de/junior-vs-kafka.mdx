@@ -1,0 +1,37 @@
+---
+title: "Junior vs. Kafka: Wie ich meine erste Begegnung überlebt habe (und was ich gelernt habe)"
+date: "2024-04-25"
+category: "Erfahrungen"
+excerpt: "Meine ersten Schritte in die Welt der verteilten Systeme. Beißt Kafka wirklich? Ein Blick auf unordentliche Konfigurationen, Fehler und wie mir KI geholfen hat, alles zu verstehen."
+---
+
+Hallo zusammen! 👋
+
+Wenn Sie sich jemals von Begriffen wie „Zookeeper“, „Partitionen“ oder „Consumer Groups“ überwältigt gefühlt haben, dann ist dieser Beitrag genau das Richtige für Sie. Heute überspringen wir die akademischen Definitionen für ein ehrliches Gespräch darüber, wie ich – ein Junior – versucht habe, Kafka zu zähmen, und warum am Anfang alles explodiert ist.
+
+## 1. „Wozu ist das überhaupt gut?“
+
+Als ich das erste Mal von Kafka hörte, dachte ich, es sei nur eine... schnelle Datenbank? Oder vielleicht nur eine weitere Warteschlange? Nicht einmal annähernd. Kafka ist ein Biest, das ein völliges Umdenken erfordert. Es heißt nicht „Ich fordere Daten an“, sondern „Ich höre zu, was passiert“.
+
+**Mein erster Fehler?** Ich habe versucht, Kafka wie eine synchrone API zu verwenden. Spoiler: So funktioniert das nicht. Wenn Ihr System auf eine Antwort von Kafka wartet, um fortzufahren, machen Sie es wahrscheinlich falsch (genau wie ich am Anfang!).
+
+## 2. Die „Aha!“-Momente (Was tatsächlich geholfen hat)
+
+Das Schwierigste für mich war zu begreifen, dass Daten in Kafka nicht verschwinden, sobald sie gelesen wurden (im Gegensatz zu RabbitMQ). Sie bleiben dort! Man kann sie wieder lesen, vom Anfang an, von letzter Woche... Das ändert alles beim Debugging.
+
+**Junior-Protipp:** Wenn etwas nicht funktioniert, starten Sie nicht einfach alles immer wieder neu. Überprüfen Sie die `Offsets`. Sie halten normalerweise den Schlüssel dazu bereit, warum Ihr Consumer „nichts sehen“ kann.
+
+## 3. KI als mein „Shadow Senior“
+
+In einer kleinen Struktur zu arbeiten bedeutet, dass man nicht immer jemanden hat, den man fragen kann. Hier sprang Claude ein. Anstatt 3 Stunden auf Stack Overflow nach „warum verbindet sich mein spring-kafka nicht“ zu suchen, fütterte ich Claude mit den Logs und fragte: „Erklär mir das, als wäre ich ein Junior.“
+
+Claude half mir nicht nur beim Beheben von Fehlern, sondern auch beim Schreiben meiner ersten Integrationstests mit `EmbeddedKafka`. Es war eine große Lektion in Sachen Automatisierung und darin, wie KI das Erlernen schwieriger Technologien wirklich beschleunigen kann.
+
+## 4. Fazit
+
+Kafka ist hart, aber es ist unglaublich lohnend, wenn man schließlich sieht, wie Datenpakete zwischen den Diensten genau wie geplant fliegen. Haben Sie keine Angst vor den Fehlern – sie sind Ihre besten Lehrer.
+
+Und Sie? Was war Ihre schlimmste Begegnung mit einer neuen Technologie? Lassen Sie es mich auf LinkedIn wissen! 🚀
+
+---
+*Kacper Celejewski - Junior Java Developer & KI-Enthusiast*

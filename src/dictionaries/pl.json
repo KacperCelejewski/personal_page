@@ -19,7 +19,15 @@
   },
   "projects": {
     "title": "Wyróżnione Projekty",
-    "view_all": "ZOBACZ WSZYSTKIE >>"
+    "view_all": "ZOBACZ WSZYSTKIE >>",
+    "rechub_backend": {
+      "desc": "Silnik zarządzania rekrutacją oparty na Flask i PostgreSQL. Automatyczne CI/CD i wdrożenie na AWS.",
+      "longDesc": "Kompleksowy backend systemu zarządzania rekrutacją. Zawiera endpointy RESTful API, zarządza bazą danych PostgreSQL przez SQLAlchemy i automatyczne potoki CI/CD przez GitHub Actions i AWS CodePipeline."
+    },
+    "rechub_frontend": {
+      "desc": "Nowoczesny, zoptymalizowany interfejs HR dashboard. Wydajne rozwiązanie multi-repo z aktualizacjami UI w czasie rzeczywistym.",
+      "longDesc": "Nowoczesny panel rekrutacyjny zbudowany w Vue.js. Część architektury multirepo, zapewniająca płynne i wydajne doświadczenie użytkownika."
+    }
   },
   "contact": {
     "title": "INICJUJ_POŁĄCZENIE",

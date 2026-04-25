@@ -19,7 +19,15 @@
   },
   "projects": {
     "title": "Ausgewählte Projekte",
-    "view_all": "ALLE PROJEKTE ANZEIGEN >>"
+    "view_all": "ALLE PROJEKTE ANZEIGEN >>",
+    "rechub_backend": {
+      "desc": "Dezentrale Engine für die Rekrutierungsverwaltung, entwickelt mit Flask und PostgreSQL. Mit automatisiertem CI/CD und AWS-Deployment.",
+      "longDesc": "Ein umfassendes Backend für ein Rekrutierungsverwaltungssystem. Bietet RESTful API-Endpunkte, PostgreSQL-Datenbankverwaltung mit SQLAlchemy und automatisierte CI/CD-Pipelines über GitHub Actions und AWS CodePipeline."
+    },
+    "rechub_frontend": {
+      "desc": "Modernes, für Edge-Umgebungen optimiertes HR-Dashboard. Hochperformante Multi-Repo-Lösung mit UI-Updates in Echtzeit.",
+      "longDesc": "Modernes Rekrutierungs-Hub-Dashboard, erstellt mit Vue.js. Teil einer Multirepo-Architektur, die eine reibungslose und leistungsstarke Benutzererfahrung bietet."
+    }
   },
   "contact": {
     "title": "VERBINDUNG_INITIALISIEREN",

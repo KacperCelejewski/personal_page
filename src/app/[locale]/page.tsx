@@ -26,12 +26,7 @@ export default async function Home({
         <div className={styles.heroContent}>
           <div className="terminal-status">{dict.hero.status}</div>
           <h1 className={styles.title}>
-            {dict.hero.title.split('Digital').map((part: string, i: number, arr: any) => (
-              <span key={i}>
-                {part}
-                {i < arr.length - 1 && <span className="text-primary">Digital</span>}
-              </span>
-            ))}
+            {dict.hero.title}
           </h1>
           <p className={styles.subtitle}>{dict.hero.subtitle}</p>
           <div className={styles.ctaGroup}>
@@ -88,7 +83,9 @@ export default async function Home({
                   </div>
                 </div>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDesc}>{project.desc}</p>
+                <p className={styles.projectDesc}>
+                  {dict.projects[project.slug.replace('-', '_') as keyof typeof dict.projects]?.desc || project.desc}
+                </p>
                 <div className={styles.projectLinks}>
                   {project.links.map(link => (
                     <span key={link} className={styles.tag}>{link}</span>

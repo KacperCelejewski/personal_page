@@ -19,7 +19,15 @@
   },
   "projects": {
     "title": "Featured Projects",
-    "view_all": "VIEW_ALL_PROJECTS >>"
+    "view_all": "VIEW ALL PROJECTS >>",
+    "rechub_backend": {
+      "desc": "Distributed recruitment management engine built with Flask and PostgreSQL. Features automated CI/CD and AWS deployment.",
+      "longDesc": "A comprehensive recruitment management system backend. Features RESTful API endpoints, PostgreSQL database management with SQLAlchemy, and automated CI/CD pipelines via GitHub Actions and AWS CodePipeline."
+    },
+    "rechub_frontend": {
+      "desc": "Modern, edge-optimized HR dashboard interface. High-performance multi-repo solution with real-time UI updates.",
+      "longDesc": "Modern recruitment hub dashboard built with Vue.js. Part of a multirepo architecture, providing a seamless and high-performance user experience."
+    }
   },
   "contact": {
     "title": "INITIALIZE_CONNECTION",
