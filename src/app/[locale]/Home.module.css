@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  padding: 8rem 0;
+  padding: var(--section-spacing) 0;
   align-items: center;
 }
 
@@ -18,7 +18,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   text-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
-  white-space: nowrap;
+  overflow-wrap: break-word;
 }
 
 .subtitle {
@@ -72,7 +72,7 @@
 }
 
 .techStack {
-  padding: 4rem 0;
+  padding: var(--section-spacing) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -180,7 +180,7 @@
 }
 
 .projects {
-  padding: 8rem 0;
+  padding: var(--section-spacing) 0;
 }
 
 .viewAll {

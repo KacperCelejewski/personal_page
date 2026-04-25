@@ -1,8 +1,9 @@
 .section {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
-  margin-bottom: 2rem;
+  margin-bottom: var(--container-padding);
   position: relative;
+  overflow: hidden;
 }
 
 .header {

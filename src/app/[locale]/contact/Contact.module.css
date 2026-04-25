@@ -1,19 +1,21 @@
 .header {
-  padding: 8rem 0 4rem;
+  padding: var(--section-spacing) 0 4rem;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: var(--font-size-hero);
+  line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.05em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
 }
 
 .layout {
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 6rem;
-  padding-bottom: 8rem;
+  padding-bottom: var(--section-spacing);
 }
 
 .form {
@@ -152,8 +154,9 @@
 @media (max-width: 1024px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: 4rem;
   }
-  .title {
-    font-size: 3rem;
+  .header {
+    padding-top: 4rem;
   }
 }

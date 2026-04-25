@@ -18,6 +18,8 @@
   --scanline-opacity: 0.03;
   --font-size-hero: clamp(1.85rem, 10vw + 0.2rem, 5rem);
   --font-size-section: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+  --section-spacing: clamp(4rem, 10vw, 8rem);
+  --container-padding: 2rem;
 }
 
 [data-theme='dark'] {
@@ -100,7 +102,7 @@ input, textarea, button {
 
 @media (max-width: 768px) {
   .main-container {
-    padding: 0 1.25rem;
+    padding: 0 1.5rem;
   }
 }
 
